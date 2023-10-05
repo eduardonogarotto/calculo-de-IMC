@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- PRECONNECT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- STYLES -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- SCRIPTS 
+      (atributo defer para executar o script apenas depois que o html for carregado.) -->
+    <script src="./main.js" defer></script>
+
+    <title>Calculadora de IMC</title>
+  </head>
+  <body>
+  
+
+
+    <div class="container">
+      <main class="card">
+        <form>
+          <fieldset>
+            <legend>Cálculo de IMC</legend>
+
+            <div class="input-wrapper">
+              <label for="weight">Peso (kg)</label>
+              <input
+                type="text"
+                id="weight"
+                placeholder="60"
+                autofocus
+                required
+                minlength="2"
+                maxlength="3"
+              />
+            </div>
+
+            <div class="input-wrapper">
+              <label for="height">Altura (m)</label>
+              <input
+                type="text"
+                id="height"
+                placeholder="165"
+                required
+                minlength="3"
+                maxlength="3"
+              />
+            </div>
+
+            <button>
+              Calcular IMC
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="arrow-up-right">
+                  <path
+                    id="Vector"
+                    d="M3.1685 8.26205L14.3589 8.26213M14.3589 8.26213L9.64488 3.54808M14.3589 8.26213L9.64488 12.9762"
+                    stroke="white"
+                    stroke-width="1.20972"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+              </svg>
+            </button>
+          </fieldset>
+        </form>
+      </main>
+    </div>
+
+    
+  </body>
+</html>
