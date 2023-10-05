@@ -24,6 +24,7 @@ button,
 input {
   font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
+  line-height: 2rem;
 }
 
 .card {
@@ -78,7 +79,6 @@ input {
   border-radius: .4rem;  
 
   color: #212529;
-  line-height: 2rem;
 }
 
 input::placeholder {
@@ -105,7 +105,6 @@ form button {
 
   color: #FFFFFF;
   font-weight: 700;
-  line-height: 2rem;  
 }
 
 svg {
@@ -118,4 +117,54 @@ form button:hover{
   background-color: #015d78;
 
   font-size: 1.8rem;
+}
+
+/* Modal (pop-up) */
+.modal-wrapper {
+  position: absolute;
+  inset: 0; /* Fazer com que o background cubra a tela toda. - inset: 0 = top: 0, right: 0, bottom: 0, left: 0 */ 
+
+  display: grid;
+  place-items: center;
+
+  background: rgba(0, 0, 0, 0.70);
+
+  /* Esconder o modal por padrão, para que seja exibido apenas quando a classe open for retirada do elemento */
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Exibe o modal */
+.modal-wrapper.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  position: relative;
+}
+
+.modal-wrapper button {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+
+  border: none;
+  background: none;
+  
+  transition: transform .5s;
+}
+
+.modal-wrapper button:hover {
+  cursor: pointer;
+  transform: scale(1.5) rotate(360deg);
+}
+
+.modal-wrapper h2 {
+  color: #0C3440;  
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 4rem;
+
+  text-align: center;
 }
