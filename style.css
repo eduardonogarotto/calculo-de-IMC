@@ -168,3 +168,33 @@ form button:hover{
 
   text-align: center;
 }
+
+/* Alert error message */
+.alert-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.8rem 0;
+  
+  background-color: #F03E3E;
+
+  text-align: center;
+  color: #FFFFFF;
+  font-weight: 700;
+
+  /* Esconder o erro por padrão, para que seja exibido apenas quando a classe open for retirada do elemento */
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(-30px);
+  transition: transform .5s;
+}
+
+/* exibe o error */
+.alert-error.open {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(0);
+}
