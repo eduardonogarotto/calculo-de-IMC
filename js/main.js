@@ -1,18 +1,11 @@
+// IMPORTS
+import { Modal } from "./modal.js"
+
+
 // VARIABLES
-const form = document.querySelector('form')
+const form = document.querySelector("form")
 const inputWeight = document.querySelector("#weight")
 const inputHeight = document.querySelector("#height")
-
-
-const Modal = {
-
-  wrapper: document.querySelector(".modal-wrapper"),
-  message: document.querySelector(".modal h2"),
-  btnClose: document.querySelector("#closeModal"),
-
-  open() { Modal.wrapper.classList.add("open") },
-  close() { Modal.wrapper.classList.remove("open") }
-}
 
 /* 3 maneiras de criar e atribuir função a um evento
 - Função Anônima
@@ -39,10 +32,6 @@ form.onsubmit = event => {
   
   Modal.message.innerText = `Seu IMC é de ${result}.`
   Modal.open()
-}
-
-Modal.btnClose.onclick = () => {
-  Modal.close()
 }
 
 //FUNCTIONS
