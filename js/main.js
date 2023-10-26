@@ -1,7 +1,7 @@
 // IMPORTS
 import { Modal } from "./modal.js"
 import { AlertError } from "./alert-error.js"
-
+import { calculateIMC, notANumber } from "./utils.js"
 
 // VARIABLES
 const form = document.querySelector("form")
@@ -29,27 +29,20 @@ form.onsubmit = event => {
   const weight = inputWeight.value
   const height = inputHeight.value
 
-  const showAlertError = notANumber(weight) || notANumber(height)
+  const weightOrHeightIsNotANumber = notANumber(weight) || notANumber(height)
 
-  if(showAlertError){
+  if(weightOrHeightIsNotANumber){
     AlertError.open()
     return;
   }
 
   AlertError.close()
-  const result = calcIMC(weight, height)
+  const result = calculateIMC(weight, height)
   
   Modal.message.innerText = `Seu IMC é de ${result}.`
   Modal.open()
 }
 
-//FUNCTIONS
-function calcIMC (weight, height) {
-  return (weight / ((height / 100) ** 2)).toFixed(2)
-}
-
-/*isNaN() verifica se um valor não é um número e retorna um boolean
-e value == "" é para validar se o input não está vazio. */
-function notANumber (value) {
-  return isNaN(value) || value == ""
-}
+/* O evento oninput irá monitorar o campo input para tomar alguma ação após a alteração do campo */
+inputWeight.oninput = () => AlertError.close()
+inputHeight.oninput = () => AlertError.close()
